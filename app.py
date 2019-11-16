@@ -35,10 +35,9 @@ def maps(resolving):
         response = 'Animal Shelters in NYC'
     if "injured" in resolving:
         response = 'Animal Hospitals in NYC'
-<<<<<<< HEAD
     if "Injured" in resolving:
         response = 'Animal Hospitals in NYC'
-=======
+
 
     if "shelter" in resolving:
         response = 'Animal Shelters in NYC'
@@ -53,8 +52,6 @@ def maps(resolving):
         response = 'Animal Shelters in NYC'
 
 
-
->>>>>>> 79c37614b48f20b06d87f8937eee838b8754ad8d
 
     #response = resolve
 
