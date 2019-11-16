@@ -4,10 +4,11 @@ import twilio.twiml
 from twilio.twiml.messaging_response import Message, MessagingResponse
 import os
 
+
 app = Flask(__name__)
 
 
-client = Client(os.environ['SID'], os.environ['SID'])
+client = Client(***REMOVED***, ***REMOVED***)
 
 
 
