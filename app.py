@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 
-client = Client(os.environ['SID'], os.environ['SID'])
+client = Client(os.environ['SID'], os.environ['AUTH'])
 
 
 
