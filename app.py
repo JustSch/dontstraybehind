@@ -34,10 +34,12 @@ def maps(resolving):
     response = " "
     if "found" in resolving:
         response = 'Animal Shelters in NYC'
-
+    if "Found" in resolving:
+        response = 'Animal Shelters in NYC'
     if "injured" in resolving:
         response = 'Animal Hospitals in NYC'
-
+    if "Injured" in resolving:
+        response = 'Animal Hospitals in NYC'
 
     #response = resolve
 
