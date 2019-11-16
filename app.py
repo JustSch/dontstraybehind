@@ -1,10 +1,6 @@
 from twilio.rest import Client
 from flask import Flask, request, redirect
-import twilio.twiml
-from twilio.twiml.messaging_response import Message, MessagingResponse
-import os
 import requests
-import json
 
 
 app = Flask(__name__)
@@ -22,6 +18,7 @@ def sms():
     message = client.messages.create(to=number,
                                      from_=***REMOVED***,
                                      body=response)
+
     return 'this'
 
 
