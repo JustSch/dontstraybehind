@@ -1,5 +1,8 @@
 from twilio.rest import Client
 from flask import Flask, request, redirect
+import twilio.twiml
+from twilio.twiml.messaging_response import Message, MessagingResponse
+import os
 import requests
 
 
@@ -28,13 +31,9 @@ def maps(resolving):
     response = " "
     if "found" in resolving:
         response = 'Animal Shelters in NYC'
-    if "Found" in resolving:
-        response = 'Animal Shelters in NYC'
+
     if "injured" in resolving:
         response = 'Animal Hospitals in NYC'
-    if "Injured" in resolving:
-        response = 'Animal Hospitals in NYC'
-
 
     if "shelter" in resolving:
         response = 'Animal Shelters in NYC'
@@ -47,6 +46,7 @@ def maps(resolving):
 
     if "Stray" in resolving:
         response = 'Animal Shelters in NYC'
+
 
 
 
@@ -76,5 +76,4 @@ def maps(resolving):
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run()
