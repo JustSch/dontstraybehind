@@ -6,14 +6,11 @@ import os
 import requests
 import json
 
+
 app = Flask(__name__)
 
 
-client = Client(os.environ['SID'], os.environ['AUTH'])
-
-
-
-
+client = Client(***REMOVED***, ***REMOVED***)
 
 @app.route('/sms', methods=['POST'])
 def sms():
@@ -38,8 +35,26 @@ def maps(resolving):
         response = 'Animal Shelters in NYC'
     if "injured" in resolving:
         response = 'Animal Hospitals in NYC'
+<<<<<<< HEAD
     if "Injured" in resolving:
         response = 'Animal Hospitals in NYC'
+=======
+
+    if "shelter" in resolving:
+        response = 'Animal Shelters in NYC'
+
+    if "Shelter" in resolving:
+        response = 'Animal Shelters in NYC'
+
+    if "stray" in resolving:
+        response = 'Animal Shelters in NYC'
+
+    if "Stray" in resolving:
+        response = 'Animal Shelters in NYC'
+
+
+
+>>>>>>> 79c37614b48f20b06d87f8937eee838b8754ad8d
 
     #response = resolve
 
@@ -49,12 +64,17 @@ def maps(resolving):
     results_object = r.json()['results']
 
     result_list = []
+    result_list.append("\n")
+    result_list.append("Here are some nearby shelters and animal hospitals")
+    result_list.append("\n")
+
 
     for i in range(0, 5):
         result_list.append((results_object[i]['name']))
-        result_list.append(' ')
+        result_list.append('\n')
         result_list.append(results_object[i]['formatted_address'])
-        result_list.append(' ')
+        result_list.append('\n')
+    result_list.append("To help these stray animals if you can't find immediate care go here : https://www.humanesociety.org/resources/how-help-stray-pet")
     result_list = ' '.join(map(str, result_list))
 
     print(result_list)
