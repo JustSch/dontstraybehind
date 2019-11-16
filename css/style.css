@@ -177,7 +177,7 @@ hr {
 	text-transform:;
 	font-weight:500;
 	font-size:18px;
-	font-family:'Roboto';
+    font-family: 'Roboto', serif;
 }
 
 .navbar-fixed-top .navbar-nav > li > a:hover{
