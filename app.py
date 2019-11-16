@@ -15,9 +15,11 @@ client = Client(os.environ['SID'], os.environ['AUTH'])
 def sms():
     number = request.form['From']
 
+    response = ""
+
     message = client.messages.create(to=number,
                                                   from_=***REMOVED***,
-                                                  body="It works now!!")
+                                                  body=response)
     return 'this'
 
 
