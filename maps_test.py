@@ -1,9 +1,9 @@
 import requests
 import json
 
-url = "https://maps.googleapis.com/maps/api/place/textsearch/json?input={}&inputtype=textquery&fields=formatted_address,name,opening_hours&key"
+url = "https://maps.googleapis.com/maps/api/place/textsearch/json?input={}&inputtype=textquery&fields=formatted_address,name,opening_hours&key=***REMOVED***"
 
-response = 'Animal%20Shelter%20In%20NYC'
+response = 'Animal Shelter In NYC'
 
 url_request = url.format(response)
 r = requests.get(url_request)
