@@ -9,7 +9,7 @@ import requests
 app = Flask(__name__)
 
 
-client = Client(***REMOVED***, ***REMOVED***)
+client = Client(os.environ['SID'], os.environ['AUTH'])
 
 @app.route('/sms', methods=['POST'])
 def sms():
@@ -19,14 +19,14 @@ def sms():
     response = maps(resolving)
 
     message = client.messages.create(to=number,
-                                     from_=***REMOVED***,
+                                     from_=os.environ['TWILIO_NUM'],
                                      body=response)
 
     return 'this'
 
 
 def maps(resolving):
-    url = "https://maps.googleapis.com/maps/api/place/textsearch/json?input={}&inputtype=textquery&fields=formatted_address,name,opening_hours&key=***REMOVED***"
+    url = "https://maps.googleapis.com/maps/api/place/textsearch/json?input={}&inputtype=textquery&fields=formatted_address,name,opening_hours&key={}"
 
     response = " "
     if "found" in resolving:
@@ -52,7 +52,7 @@ def maps(resolving):
 
     #response = resolve
 
-    url_request = url.format(response)
+    url_request = url.format(response,os.environ['MAPS_KEY'])
     r = requests.get(url_request)
 
     results_object = r.json()['results']
